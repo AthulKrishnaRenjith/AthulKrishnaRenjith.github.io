@@ -236,3 +236,34 @@ footer {
     }
 }
 
+body {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('images/background.jpg') center/cover fixed;
+    color: #ffffff; /* Change text color for better contrast */
+}
+
+/* Optional: Add a pseudo-element for better overlay control */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('images/background.jpg') center/cover fixed;
+}
+
+/* Add text shadow for better readability */
+section, header h1, header h2 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Make sections semi-transparent */
+section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
