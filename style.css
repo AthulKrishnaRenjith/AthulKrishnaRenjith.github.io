@@ -1,56 +1,173 @@
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --primary: #2ecc71;
+    --secondary: #27ae60;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --text: #333;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Styles */
+header {
+    background: var(--dark);
+    color: white;
+    padding: 6rem 0;
     text-align: center;
 }
 
-header {
-    background: #222;
-    color: white;
-    padding: 20px;
+.nav-links {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
-    margin: 0;
+.nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Section Styles */
 section {
-    padding: 20px;
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    margin: 1rem auto;
+}
+
+/* Timeline */
+.timeline-item {
     background: white;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
+.timeline-item:hover {
+    transform: translateY(-5px);
 }
 
-ul li {
-    margin-bottom: 10px;
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #222;
-    color: white;
-    border: none;
+.project-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
     cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-button:hover {
-    background-color: #444;
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-footer {
-    background: #222;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
     color: white;
-    padding: 10px;
-    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--dark);
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+    
+    .nav-links a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
 }
 
 
