@@ -33,6 +33,24 @@ header {
     text-align: center;
 }
 
+.cv-preview {
+    margin-top: 1rem;
+}
+
+.preview-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.preview-link:hover {
+    color: var(--secondary);
+}
+
+.preview-link i {
+    margin-right: 0.5rem;
+}
+
 .nav-links {
     display: flex;
     justify-content: center;
