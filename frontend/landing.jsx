@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaBrain, FaCode, FaMicrochip, FaDownload, FaLaptopCode, FaGraduationCap } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaRobot, FaBrain, FaCode, FaMicrochip, FaDownload, FaLaptopCode, FaGraduationCap } from 'react-icons/fa';
 import { SiRos, SiOpencv, SiPytorch, SiDocker, SiNvidia, SiCplusplus, SiPython, SiCheckmarx } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import strideDemo from './assets/stride_demo.mp4';
 import uhRacingDemo from './assets/uh_racing_demo.mp4';
 import osuBeatmapDemo from './assets/osu_beatmap_demo.mp4';
+import profileImage from './assets/photo_formal.jpg';
 
 // Animation Variants
 const fadeInUp = {
@@ -109,7 +110,11 @@ const Landing = () => {
                             className="absolute inset-0 bg-blue-500 rounded-full blur-xl"
                         ></motion.div>
                         <div className="relative w-full h-full bg-slate-900 rounded-full border-2 border-blue-500/30 flex items-center justify-center shadow-2xl overflow-hidden">
-                            <FaRobot className="w-16 h-16 text-blue-500" />
+                            <img
+                                src={profileImage}
+                                alt="Athul Krishna Renjith"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
 
@@ -134,9 +139,7 @@ const Landing = () => {
                         <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="https://www.linkedin.com/in/athulkrishnarenjith" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium border border-slate-700 block">
                             <FaLinkedin /> LinkedIn
                         </motion.a>
-                        <motion.div variants={fadeInUp} className="flex items-center gap-2 px-5 py-2.5 text-slate-400">
-                            <FaPhone className="text-slate-500" /> +44 7455755478
-                        </motion.div>
+
                     </motion.div>
                 </motion.div>
             </header>
