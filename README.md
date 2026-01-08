@@ -68,7 +68,3 @@ npm run build
 ```
 
 This will create production-ready assets in `dist_frontend` and `dist_backend`.
-
-## License
-
-[MIT](LICENSE)
